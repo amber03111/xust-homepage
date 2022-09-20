@@ -1,31 +1,21 @@
 <template>
   <div class="border" style="position:relative">
     <div class="canvaszz"></div>
+    <header class="header">
+      <img src="../../assets/logo.png" class="logo" />
+      <span>校软件实验室</span>&nbsp;
+      <span>kcsoft-club</span>
+    </header>
     <canvas id="myCanvas" class="canvas"></canvas>
-    <div v-if="show"
-      style=" position:fixed; top:20%; left:50%;transform: translateX(-50%) ;z-index:200;background-color: white;width:600px;height:400px;border-radius: 10px;">
-      <div style='width:100%; height:100%;position: relative;'>
-        <div style="position:absolute;right:10px;top:8px" @click="show = false">×</div>
-        <div style="position:absolute;left:10px;top:10px;font-size:14px">校软件创新实验室</div>
-        <div style="position:absolute;width:100%; text-align:center; top:50px;font-size:12px;color:darkgray">
 
-          无论你来自哪里，是什么专业。<br />
-          只要你热爱学习、热爱计算机软件编程、热爱创新，我们就欢迎你的加入！<br />
-          扫描以下二维码加入招新群了解更多。</div><br />
-          <img src="../../assets/invite.jpg" style="width:150px;height:230px; position:absolute; ;left:50%;transform: translateX(-50%); bottom:50px"/>
-        <!-- <SignPage ></SignPage> -->
-        <div @click="show = false"
-          style="position:absolute;bottom:20px; left:50%;transform: translateX(-50%);width:140px">我知道啦，这就去</div>
-      </div>
-
-    </div>
 
     <div class="tit">
       <div>西安科技大学软件创新实验室</div>
-      <div >我们的征途是星辰大海</div>
-      <div @click="clickFun()">加入我们</div>
+      <div>我们的征途是星辰大海</div>
+      <div @click="clickFun()"><a href="https://jq.qq.com/?_wv=1027&k=51ukmBo" target="blank"
+          style="text-decoration:none;color:white;font-size: 20px;">加入我们</a></div>
     </div>
-   
+
 
 
 
@@ -38,17 +28,6 @@
   height: 100vh;
 }
 
-.header {
-  width: 100%;
-  height: 80px;
-  background-color: rgba(23, 21, 21, 0.8);
-  display: flex;
-  color: rgb(212, 208, 208);
-  font-size: 24px;
-  font-family: 'Blackletter', 'FZShuTi', 'Lucida Grande', 'Lucida Sans Unicode';
-
-  align-items: center;
-}
 
 .tip {
   position: absolute;
@@ -83,40 +62,13 @@
 
 
 
-.tit {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100vw;
-  height: 200px;
-  background-color: rgba(78, 113, 143, 0.5);
-}
 
 .tit :nth-child(n) {
   width: 100%;
   text-align: center;
 }
 
-.tit :nth-child(1) {
-  font-size: 50px;
-  color: white;
-  margin-top: 30px;
-}
 
-.tit :nth-child(2) {
-  font-size: 15px;
-  color: rgb(4, 23, 92);
-  margin-top: 10px;
-  font-family: '宋体';
-  font-weight: 700;
-}
-
-.tit :nth-child(3) {
-  font-size: 25px;
-  color: white;
-
-  margin-top: 30px;
-}
 
 .canvaszz {
   position: absolute;
@@ -165,9 +117,9 @@ export default {
     }
   },
   methods: {
-   
+
     clickFun() {
-   
+
       this.show = !this.show;
 
     },
@@ -184,9 +136,9 @@ export default {
         ctx = canvas.getContext('2d'),
         w = (canvas.width = window.innerWidth),
         h = (canvas.height = window.innerHeight),
-        hue = 217, 
-        stars = [], 
-        count = 0, 
+        hue = 217,
+        stars = [],
+        count = 0,
         maxStars = 1300 //星星数量
 
       var canvas2 = document.createElement('canvas'),
@@ -205,7 +157,7 @@ export default {
       ctx2.arc(half, half, half, 0, Math.PI * 2)
       ctx2.fill()
 
-     
+
       function random(min, max) {
         if (arguments.length < 2) {
           max = min
@@ -247,7 +199,7 @@ export default {
         if (twinkle === 1 && this.alpha > 0) {
           this.alpha -= 0.05
         } else if (twinkle === 2 && this.alpha < 1) {
-       
+
           this.alpha += 0.05
         }
 

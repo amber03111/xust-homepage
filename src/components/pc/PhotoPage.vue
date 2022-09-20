@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh; width:100%; position: relative; ">
+  <div style="height:100vh !important; width:100%; position: relative; ">
     <BacPage style='position:absolute; bottom:0px;width:100% ;height:100%;z-index: -200;'> </BacPage>
     <div style="width:100%;height:3px;"></div><br />
     <h2
@@ -80,6 +80,7 @@ text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #
 import vueSeamlessScroll from 'vue-seamless-scroll'
 import WavePage from './WavePage'
 import BacPage from './BacPage'
+import jQuery from 'jquery'
 export default {
   name: 'Example03Basic',
   components: {

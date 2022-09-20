@@ -1,300 +1,439 @@
 <template>
-  <div>
-
-    <div class="container2"
-      style=" background: linear-gradient(to right, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
-      <div style="width:100%;height:10px;"> </div>
-      <h2
-        style="width:100%; text-align:center ;margin :30px auto    ;color: #fafafa;font-size:2.5vw;letter-spacing: 0;text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135">
-        我们的技术</h2>
-
-      <div
-        style="min-width:800px;height:50px;position:absolute;top:20vh;left:15%;display:flex;justify-content:space-evenly">
-        <span style="color:#005B9C">Three.js</span> <span style="color:#C9921E">数据结构</span> <span
-          style="color:green">TypeScript</span> <span style="color:purple">Redux</span> <span
-          style="color:red">webpack</span>
-      </div>
-      <div
-        style="min-width:500px;height:1px;position:absolute;bottom:0px;left:15%   ;display:flex;justify-content:space-evenly;transform-origin: 0 0 ;transform:rotateZ(270deg)">
-        <span style="color:#005B9C">koa</span> <span style="color:#FFE382">Git</span> <span
-          style="color:#FFDF5A">React</span> <span style="color:#A9BE32">函数式编程</span> <span
-          style="color:#FFF321">HTTP/TCP</span>
-      </div>
-      <div
-        style="min-width:800px;height:50px;position:absolute;bottom:0px;right:15%;display:flex;justify-content:space-evenly">
-        <span style="color:#5B9C3F">C</span> <span style="color:#645B9C">C++</span> <span
-          style="color:#00349C">Java</span> <span style="color:#DB9C31">Python</span> <span
-          style="color:#005B9C">C#</span>
-      </div>
-      <div
-        style="min-width:500px;height:50px;position:absolute;top:17vh;left:80%;display:flex;justify-content:space-evenly;transform-origin: 0 0;transform:rotateZ(90deg)">
-        <span style="color:#3FB27F">websoket</span> <span style="color:#D6002F"> Docker</span> <span
-          style="color:#C2AEDF">unity</span> <span style="color:#C3493D">Spring Boot</span> <span
-          style="color:#A34312">Next.js</span>
-      </div>
-      <div class="card_box" style=" bottom:50px; left:25%">
-        <div class="Card" style=" " :class="{ 'rotate360': showAnimate[1] }" @click="play(1)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-              &nbsp;   &nbsp;  前端开发是创建WEB页面或APP等前端界面呈现给用户的过程，通过HTML，CSS及JavaScript以及衍生出来的各种技术、框架、解决方案，来实现互联网产品的用户界面交互
-              <br />
-              &nbsp;   &nbsp; 前端开发从网页制作演变而来，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web1.0时代的产物，早期网站主要内容都是静态，以图片和文字为主，用户使用网站的行为也以浏览为主。随着互联网技术的发展和HTML5、CSS3的应用，现代网页更加美观，交互效果显著，功能更加强大。
-            </p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">前端</div>
-          </div>
-
+    <div style="position:relative;width:100%;height:100vh;">
+        <div class="pie" @click="showtips=true">
+            <div id="myCiYun"></div>
         </div>
-      </div>
-      <div class="card_box" style=" bottom:50px;left:30%;  ">
-        <div class="Card" :key='22' style="  bottom:0px; " :class="{ 'rotate360': showAnimate[2] }" @click="play(2)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">  &nbsp;   &nbsp;  在软件架构和程序设计领域，前端是软件系统中直接和用户交互的部分，而后端是在后台工作的，控制着前端的内容，主要负责程序设计架构思想，管理数据库等。<br />
 
-              &nbsp;   &nbsp;   前端控制ajax等技术向后端进行网络请求；后端收到请求后对数据库进行操作，返回给前端JSON数据；前端把相应数据展示在页面上。<br />
-              &nbsp;   &nbsp;   后端更多的是与数据库进行交互以处理相应的业务逻辑，需要考虑的是如何实现功能、数据的存取、平台的稳定性与性能等，涉及动态语言如PHP、ASP、JSP等。
-
-              将软件分为前端和后端是一种将软件不同功能的部分相互分离的抽象</p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">后端</div>
-          </div>
-
+        <div class="tips" @click="showtips = !showtips">
+            <transition name="fade" enter-active-class="animate__animated animate__rollIn"
+                leave-active-class="animate__animated animate__rotateOut">
+                <div>
+                    {{this.show_data}}
+                </div>
+            </transition>
         </div>
-      </div>
-      <div class="card_box" style=" bottom:50px;left:35% ">
-        <div class="Card" :key='33' style=" " :class="{ 'rotate360': showAnimate[3] }" @click="play(3)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-              &nbsp;   &nbsp;   所谓算法是指解决方案的准确而完整的描述。<br/>
 
-              &nbsp;   &nbsp;  对于一个问题，如果可以通过一个计算机程序，在有限的存储空间内运行有限的时间，而得到正确的结果，则称这个问题是算法可解的。但算法不等于程序，也不等于计算方法。当然，程序也可以作为算法的一种描述，但程序通常还需要考虑很多与方法和分析无关的细节问题，这是因为在编写程序时要受到计算机系统运行环境的限制。通常，程序的编制不可能优于算法的设计。
-            </p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">算法</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card_box" style=" bottom:50px;left:40%;  ">
-        <div class="Card" :key='22' style="  bottom:0px; " :class="{ 'rotate360': showAnimate[4] }" @click="play(4)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-              &nbsp;   &nbsp;  VR 即：虚拟现实
-
-              Virtual Reality的简称缩写，即：虚拟现实，是指利用计算机技术模拟产生一个为用户提供视觉、听觉、触觉等感官模拟的三度空间虚拟世界，用户借助特殊的输入/输出设备，与虚拟世界进行自然的交互。<br />
-              &nbsp;   &nbsp;  AR：即“增强现实”
-
-              Augmented Reality的简称缩写，即：增强现实，是一种实时计算摄影机影像位置及角度，并辅以相应图像的技术。这种技术可以通过全息投影，在镜片的显示屏幕中将虚拟世界与现实世界叠加，操作者可以通过设备互动。
-
-
-            </p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">AR<br />/<br />VR</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card_box" style=" bottom:50px;left:45%;  ">
-        <div class="Card" :key='22' style="  bottom:0px; " :class="{ 'rotate360': showAnimate[5] }" @click="play(5)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-              &nbsp;   &nbsp; 三维建模（3D Modeling），通过三维制作软件通过虚拟三维空间构建出具有三维数据的模型。<br />
-
-              &nbsp;   &nbsp;   通常情况根据行业需求的不同可以分为：多边形建模（Polygon Modeling）、参数化建模（Parametric Modeling）、逆向建模（Reverse Modeling）、曲面建模（NURBS
-              Modeling）等。<br />
-
-              &nbsp;   &nbsp;  不同建模方式特点不同，作用也不同，对应着不同的行业需求。</p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">3D建模算法</div>
-          </div>
-        </div>
-      </div>
-      <div class="card_box" style=" bottom:50px; left:50%">
-        <div class="Card" style=" " :class="{ 'rotate360': showAnimate[6] }" @click="play(6)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-
-              &nbsp;   &nbsp;  简单说，"函数式编程"是一种"编程范式",也就是如何编写程序的方法论。
-              它属于"结构化编程"的一种，主要思想是把运算过程尽量写成一系列嵌套的函数调用。<br/>
-
-              &nbsp;   &nbsp;  函数编程支持函数作为第一类对象，有时称为闭包或者仿函数（functor）对象。实质上，闭包是起函数的作用并可以像对象一样操作的对象。与此类似，FP
-              语言支持高阶函数。高阶函数可以用另一个函数（间接地用一个表达式） 作为其输入参数，在某些情况下，它甚至返回一个函数作为其输出参数。这两种结构结合在一起使得可以用优雅的方式进行模块化编程，这是使用 FP
-              的最大好处</p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">函数式编程</div>
-          </div>
-        </div>
-      </div>
-      <div class="card_box" style=" bottom:50px; left:55%">
-        <div class="Card" style=" " :class="{ 'rotate360': showAnimate[7] }" @click="play(7)">
-          <div class="card_back" style="font-size:13px; text-align:left">
-            <p style="margin:40px 15px">
-             &nbsp;   &nbsp; 机器学习是一门多学科交叉专业，涵盖概率论知识，统计学知识，近似理论知识和复杂算法知识，使用计算机作为工具并致力于真实实时的模拟人类学习方式，并将现有内容进行知识结构划分来有效提高学习效率。<br/>
-             &nbsp;   &nbsp;  该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能，是对能通过经验自动改进的计算机算法的研究。用数据或以往的经验，以此优化计算机程序的性能标准</p>
-          </div>
-          <div class="card_front">
-            <div class="card_tit">机器学习</div>
-          </div>
-        </div>
-      </div>
 
     </div>
-  </div>
-
 </template>
 
 <script>
+
+import 'echarts-wordcloud';
+const echarts = require("echarts");
 export default {
-  data() {
-    return {
+    created() {
+        this.initData()
+    },
+    data() {
+        return {
+            showtips: false,
+            show_data: "1",
+            range: [17, 55],
+            savetips: [{ title: "123", mes: "12345" }, { title: "123", mes: "12345" }]
+        }
+    },
 
-      active: true,
-      isClick: true,
-      currentIndex: 0,
-      flag: false,
-      showAnimate: [
-        false, false, false,
-      ]
+    mounted() {
+
+        this.changeWidth();
+        this.initData();
+    },
+    methods: {
+        changeWidth() {
+            if (document.body.clientWidth >= 900) {
+                this.range = [17, 50],
+                    this.initData();
+            }
+            if (document.body.clientWidth <= 900) {
+                this.range = [12, 25]
+                this.initData();
+            }
+        },
+        initData() {
+            // 基于准备好的dom，初始化echarts实例
+            if (myChart != null && myChart != "" && myChart != undefined) {
+                myChart.dispose();
+            }
+
+            var myChart = echarts.init(document.getElementById('myCiYun'))
+            var maskImage = new Image();
+            var range = this.range
+            maskImage.src = "data:image/png;base64,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"
+
+            var option = {
+                backgroundColor: 'white',
+
+                series: [{
+                    name: '热点分析',
+                    gridSize: 1,
+                    type: 'wordCloud',
+                    size: ['9%', '99%'],
+                    sizeRange: range,
+                    rotationRange: [0, 0],
+                    left: 'center',
+                    top: 'center',
+                    right: null,
+                    bottom: null,
+
+                    maskImage: maskImage,
+                    textPadding: 0,
+                    autoSize: {
+                        enable: true,
+                        minSize: 25
+                    },
+                    textStyle: {
+                        normal: {
+                            color: function () {
+                                return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                            }
+                        },
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    },
+                    data: [
+                        {
+                            name: "前端",
+                            value: "91",
+                            num: "1"
+                        }, {
+                            name: "后端",
+                            value: "90",
+                            num: "1"
+                        }, {
+                            name: "算法",
+                            value: "92",
+                            num: "2"
+                        }, {
+                            name: "函数式编程",
+                            value: "83"
+                        }, {
+                            name: "C语言",
+                            value: "89"
+                        },
+
+                        {
+                            name: "C++",
+                            value: "88"
+                        },
+                        {
+                            name: "C#",
+                            value: "87"
+                        },
+                        {
+                            name: "JAVA",
+                            value: "88"
+                        },
+
+                        {
+                            name: "Javascript",
+                            value: "86"
+                        },
+                        {
+                            name: "websocket",
+                            value: "82"
+                        },
+                        {
+                            name: "Three.js",
+                            value: "80"
+                        },
+                        {
+                            name: "Vue",
+                            value: "79"
+                        },
+                        {
+                            name: "Docker",
+                            value: "79"
+                        },
+                        {
+                            name: "Next.js",
+                            value: "78"
+                        },
+                        {
+                            name: "unity",
+                            value: "80"
+                        },
+                        {
+                            name: "Spring Boot",
+                            value: "81"
+                        },
+                        {
+                            name: "HTTP/TCP",
+                            value: "77"
+                        }, {
+                            name: "Python",
+                            value: "86"
+                        },
+                        {
+                            name: "Redux",
+                            value: "85"
+                        },
+
+                        {
+                            name: "C语言",
+                            value: "80"
+                        },
+                        {
+                            name: "C++",
+                            value: "70"
+                        },
+                        {
+                            name: "C#",
+                            value: "70"
+                        },
+                        {
+                            name: "JAVA",
+                            value: "70"
+                        },
+                        {
+                            name: "Javascript",
+                            value: "70"
+                        },
+                        {
+                            name: "websocket",
+                            value: "70"
+                        },
+                        {
+                            name: "Three.js",
+                            value: "70"
+                        },
+                        {
+                            name: "C++",
+                            value: "70"
+                        },
+                        {
+                            name: "C#",
+                            value: "70"
+                        },
+                        {
+                            name: "JAVA",
+                            value: "70"
+                        },
+                        {
+                            name: "Javascript",
+                            value: "70"
+                        },
+                        {
+                            name: "websocket",
+                            value: "70"
+                        },
+                        {
+                            name: "Three.js",
+                            value: "70"
+                        },
+                        {
+                            name: "Vue",
+                            value: "70"
+                        },
+                        {
+                            name: "Docker",
+                            value: "70"
+                        },
+                        {
+                            name: "Next.js",
+                            value: "70"
+                        },
+                        {
+                            name: "unity",
+                            value: "70"
+                        },
+                        {
+                            name: "Spring Boot",
+                            value: "70"
+                        },
+                        {
+                            name: "HTTP/TCP",
+                            value: "70"
+                        }, {
+                            name: "Python",
+                            value: "79"
+                        },
+                        {
+                            name: "Redux",
+                            value: "70"
+                        },
+                        {
+                            name: "Spring Boot",
+                            value: "70"
+                        },
+                        {
+                            name: "HTTP/TCP",
+                            value: "70"
+                        }, {
+                            name: "Python",
+                            value: "79"
+                        },
+                        {
+                            name: "Redux",
+                            value: "70"
+                        },
+
+                        {
+                            name: "C++",
+                            value: "70"
+                        },
+                        {
+                            name: "C#",
+                            value: "70"
+                        },
+                        {
+                            name: "JAVA",
+                            value: "70"
+                        },
+                        {
+                            name: "Javascript",
+                            value: "70"
+                        },
+                        {
+                            name: "websocket",
+                            value: "70"
+                        },
+                        {
+                            name: "Three.js",
+                            value: "70"
+                        },
+                        {
+                            name: "Vue",
+                            value: "70"
+                        },
+                        {
+                            name: "Docker",
+                            value: "70"
+                        },
+                        {
+                            name: "Next.js",
+                            value: "70"
+                        },
+                        {
+                            name: "unity",
+                            value: "70"
+                        },
+                        {
+                            name: "Spring Boot",
+                            value: "70"
+                        },
+                        {
+                            name: "HTTP/TCP",
+                            value: "70"
+                        }, {
+                            name: "Python",
+                            value: "79"
+                        },
+                        {
+                            name: "Redux",
+                            value: "70"
+                        },
+
+
+                    ]
+                }]
+            };
+            myChart.setOption(option)
+            myChart.on('click', (params) => {
+                this.showtips = true;
+                console.log(this.showtips)
+                console.log('myChart:', params, '------', params.data, '---', params.name)
+
+                if (params.name == '前端') {
+
+
+
+                    this.changetip(params.name)
+                    this.show_data = params.name
+                    console.log(this.show_data)
+                }
+                else if (params.name == '后端') {
+
+                    this.changetip(params.name)
+                    this.show_data = params.name
+                    console.log(this.show_data)
+                }
+                else if (params.name == '算法') {
+
+                    this.changetip(params.name)
+                    this.show_data = params.name
+                    console.log(this.show_data)
+                }
+
+            });
+
+        },
+        changetip(tip_name) {
+            this.show_data = tip_name
+            console.log("xiugaile")
+            console.log(this.show_data)
+        }
     }
-  },
-  mounted() {
-
-  },
-  methods: {
-    show(event) {
-      this.currentIndex = event
-    },
-    play(e) {
-      console.log(e)
-      if (this.showAnimate[e]) {
-        this.$set(this.showAnimate, e, false)
-      }
-      else {
-        this.$set(this.showAnimate, 1, false)
-        this.$set(this.showAnimate, 2, false)
-        this.$set(this.showAnimate, 4, false)
-        this.$set(this.showAnimate, 5, false)
-        this.$set(this.showAnimate, 6, false)
-        this.$set(this.showAnimate, 7, false)
-        this.$set(this.showAnimate, 0, false)
-        this.$set(this.showAnimate, 3, false)
-        this.$set(this.showAnimate, e, true)
-      }
-
- 
-
-
-
-    },
-
-    itemClick: function (index) {
-      this.currentIndex = index
-    
-      this.cardArrs.index.selected = true
-    },
-  
-  },
 }
 </script>
+
 <style>
-.rotate360 {
-  animation: rotate360 1s;
-  -webkit-animation-fill-mode: forwards;
+@media only screen and (min-width: 1200px) {
+    #myCiYun {
+        width: 800px;
+        height: 500px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .pie {
+        width: 800px;
+        height: 600px;
+    }
+
+    .tips {
+        position: absolute;
+        top: 10%;
+        right: 40px;
+        color: white;
+        width: 400px;
+        height: 300px;
+        background-color: blue
+    }
 }
 
-@keyframes rotate360 {
-  0% {
-
-    bottom: 0px;
-  }
-
-  50% {
-
-    transform: rotate3d(0, 1, 0, 90deg);
-  }
-
-  100% {
-
-    transform: rotate3d(0, 1, 0, 180deg) translateZ(9999px);
-    z-index: 9999;
-    top: 100px;
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
 
 
-  }
-}
-
-.card_tit {
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  width: 40px;
-  height: 60px;
-  color: white;
-
-}
-
-.Card {
-  width: 250px;
-  height: 350px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: all 5s;
+    #myCiYun {
+        width: 800px;
+        height: 600px !important;
+        display: inline-block;
+        margin: 0 20%;
+    }
 }
 
 
 
 
-.card_box {
-  width: 250px;
-  height: 350px;
-  display: inline-block;
-  position: absolute;
+@media only screen and (max-width:900px) {
+    #myCiYun {
+        min-width: 300px;
+        min-height: 300px;
+        width: 95vw;
+        height: 75vw;
+        display: inline-block;
+        margin: 0 2.5vw;
+    }
 
-  transition: left 2s, transform 2s 2s;
+    .pie {
+        width: 100%;
+        height: 100%;
+    }
 
-}
-
-.card_front,
-.card_back {
-  position: absolute;
-  top: 0px;
-  width: 250px;
-  height: 350px;
-  color: papayawhip;
-  font-size: 35px;
-  text-align: center;
-
-  border-radius: 10px;
-}
-
-.card_front {
-  background-color: black;
-  transform: translateZ(2px);
-  background-image: url(../../assets/card.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  font-family: "STXinwei", "FZShuTi";
-}
-
-.card_back {
-  background-image: url(../../assets/card_front.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  transform: translateZ(-3px);
-  transform: rotate3d(0, 1, 0, 180deg);
-}
-
-.container2 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: block;
-  transition: all 2s, transform 2s 2s;
+    .tips {
+        position: absolute;
+        bottom: 40px;
+        color: white;
+        width: 95vw;
+        height: 40vh;
+        background-color: blue
+    }
 }
 </style>

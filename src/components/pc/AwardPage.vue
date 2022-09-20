@@ -8,95 +8,98 @@ color:white">
 letter-spacing: 0;
 text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135">
             我们参加的比赛</h2>
-        <div style="width:50% ;float:left">
-            <div style="width:50% ;margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
+      
+            <div class="h_race" @click="enterBlock($event)"
                 @mouseleave="leaveBlock($event)">
                 <div
-                    style="float:left; width:200px;height:120px ; -webkit-mask: linear-gradient(to left, transparent, #000);">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
                 </div>
-                <div style="float:right;margin-left:30px; width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p>
                     (英语:International Collegiate Programming Contest,ICPC)
                     是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
 
 
                 </div>
             </div>
-            <div style=" margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
+            <div class="h_race" @click="enterBlock($event)"
                 @mouseleave="leaveBlock($event)">
                 <div
-                    style="float:left; width:200px;height:120px; -webkit-mask: linear-gradient(to left, transparent, #000);">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
                 </div>
-                <div style="float:right;margin-left:30px; width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p>
                     (英语:International Collegiate Programming Contest,ICPC)
                     是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
 
 
                 </div>
             </div>
-
-            <div style=" margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
+            <div class="h_race" @click="enterBlock($event)"
                 @mouseleave="leaveBlock($event)">
-                <div style="float:left; width:200px;height:120px">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
+                <div
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
                 </div>
-                <div style="float:left;margin-left:30px;width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p> 
                     (英语:International Collegiate Programming Contest,ICPC)
                     是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
 
 
                 </div>
             </div>
+
+            <div class="h_race" @click="enterBlock($event)"
+                @mouseleave="leaveBlock($event)">
+                <div
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
+                </div>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p>
+                    (英语:International Collegiate Programming Contest,ICPC)
+                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
+
+
+                </div>
+            </div>
+            <div class="h_race" @click="enterBlock($event)"
+                @mouseleave="leaveBlock($event)">
+                <div
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
+                </div>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p>
+                    (英语:International Collegiate Programming Contest,ICPC)
+                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
+
+
+                </div>
+            </div>
+            <div class="h_race" @click="enterBlock($event)"
+                @mouseleave="leaveBlock($event)">
+                <div
+                   class="mes_pic">
+                    <img src="../../assets/card.jpg" style=" width:100%;height:100%" />
+                </div>
+                <div class="h_message">
+                    <p className='h_mes'>国际大学生程序设计竞赛</p>
+                    (英语:International Collegiate Programming Contest,ICPC)
+                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
+
+
+                </div>
+            </div>
+    
+      
         </div>
-        <div style="width:50% ;display:inline-block">
-            <div style="width:50% ;margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
-                @mouseleave="leaveBlock($event)">
-                <div style="float:left; width:200px;height:120px">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
-                </div>
-                <div style="float:right;margin-left:30px; width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
-                    (英语:International Collegiate Programming Contest,ICPC)
-                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
 
 
-                </div>
-            </div>
-            <div style=" margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
-                @mouseleave="leaveBlock($event)">
-                <div style="float:left; width:200px;height:120px">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
-                </div>
-                <div style="float:right;margin-left:30px; width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
-                    (英语:International Collegiate Programming Contest,ICPC)
-                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
-
-
-                </div>
-            </div>
-
-            <div style=" margin:2vh auto ;width:550px;height:28vh;" @click="enterBlock($event)"
-                @mouseleave="leaveBlock($event)">
-                <div style="float:left; width:200px;height:120px">
-                    <img src="../../assets/card.jpg" style=" width:200px;height:120px" />
-                </div>
-                <div style="float:left;margin-left:30px;width:300px">
-                    <p className='break-words text-center mb-4'>国际大学生程序设计竞赛</p>
-                    (英语:International Collegiate Programming Contest,ICPC)
-                    是一项旨在展示大学生创新能力团队精神和在压力下编写程序，
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+  
 </template>
 <script>
 export default {
@@ -110,4 +113,81 @@ export default {
         },
     }
 }
+
 </script>
+<style>
+    @media only screen and (min-width: 1200px) {
+       .h_race{
+        margin:2vh auto ;
+        width:44vw;
+        padding:0 2vw;
+        height:28vh;
+        display:inline-block;
+      
+       }
+.mes_pic{
+    float:left;
+    width:15vw;
+     height:9vw ; 
+    -webkit-mask: linear-gradient(to left, transparent, #000);
+}
+.mes_pic img{
+    width:100%;height:100%
+}
+.h_message{
+    float:left;margin-left:10px; width:60%;
+
+}
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+
+    .h_race{
+        margin:2vh auto ;
+        width:44%;
+        padding:0 2%;
+        height:28vh;
+        display:inline-block;
+        font-size: 0.4rem;
+       }
+.mes_pic{
+    float:left;
+     width:15vw;
+     height:9vw ; 
+    -webkit-mask: linear-gradient(to left, transparent, #000);
+}
+.mes_pic img{
+    width:100%;height:100%
+}
+.h_message{
+    float:left;margin-left:10px; width:60%;
+    font-size:1rem;
+
+}
+
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .mes_pic {
+    width: 30vw;
+    height: 15vw;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
+    margin-left: 2%;
+    float: left;
+}
+.h_race{
+   width:100% ;height:15vh;
+     margin:0.5vh auto;
+   font-size: 0.4rem;
+}
+.h_message{
+    margin-left:2%; 
+    width:65% ;
+    float:left;
+
+}
+}
+</style>
